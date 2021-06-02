@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;500;700;900&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
 
 // Color-family
@@ -7,7 +8,7 @@ $font-family-jose-san: "Josefin Sans", sans-serif;
 
 // Coolor-pallete
 $color-primary-light-200: rgba(0, 0, 0, 0.945);
-$color-primary-light-300: rgb(12, 11, 11);
+$color-primary-light-300: rgb(42, 42, 42);
 
 *,
 *::before,
@@ -17,6 +18,16 @@ $color-primary-light-300: rgb(12, 11, 11);
   box-sizing: border-box;
 }
 
+@mixin hoverAnimation {
+  transition: transform 250ms;
+  transition-timing-function: linear;
+
+  &:hover {
+    background-color: rgb(30, 30, 32);
+    transform: scale(1.1);
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -24,7 +35,7 @@ body {
   font-size: 100%;
   font-family: $font-family-gothic;
   background-color: $color-primary-light-300;
-  color: whitesmoke;
+  color: rgb(245, 245, 245);
 }
 
 img {
@@ -37,129 +48,216 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
-  color: #cec6c6;
   display: inline-block;
+  color: whitesmoke;
 }
 
-.main-left {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  color: white;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 88px 88px 0 88px;
+.heading__h5 {
+  // text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
-.profile {
-  display: flex;
-  flex-direction: column;
-
-  &__name {
-    font-family: inherit;
-    letter-spacing: 1.6;
-    font-size: 4rem;
-    margin-bottom: 2rem;
-  }
-
-  &__description {
-    color: #f5f3f3d0;
-    font-size: 0.9rem;
-    letter-spacing: 1.8;
-    font-weight: 500;
-    font-family: $font-family-gothic;
-    line-height: 1.6;
-  }
-
-  &__title {
-    position: relative;
-  }
-
-  &__title-link {
-    text-decoration: none;
-    display: block;
-    font-weight: 300;
-    padding: 1rem 0;
-  }
-
-  &__title-span {
-    margin-right: 2rem;
-  }
-
-  &__bio {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__bio-img {
-    width: 5%;
-    border-radius: 100px;
-  }
-}
-
-.main-right {
-  padding: 150px 150px 0 88px;
-  margin-left: 50%;
-}
-
-.card {
-  background-color: rgb(156, 143, 143);
-
-  &__h6 {
-    text-transform: uppercase;
-    margin: 0.5rem 0;
-  }
-
-  &__paragraph {
-    font-weight: 300;
-    margin: 0.7rem 0;
-  }
-
-  &__big {
+/* Mobile Screen layout*/
+@media (max-width: 922px) {
+  .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+  }
 
-    &__wrapper {
+  .main-left {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
+
+    &__name {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    &__description {
+      font-size: 0.8em;
+      line-height: 1.6;
       margin: 1rem 0;
-      padding: 3rem;
-      background-color: rgb(24, 24, 21);
-      transition: transform 250ms;
-      transition-timing-function: linear;
+    }
 
-      &:hover {
-        background-color: rgb(30, 30, 32);
-        transform: scale(1.1);
-      }
+    &__title {
+      display: none;
+    }
+
+    &__bio {
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    &__bio-img {
+      width: 10%;
+      border-radius: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+
+    &__bio-social {
+      letter-spacing: 1;
+      font-weight: 400;
+      font-size: 0.87rem;
+      padding: 0 1rem;
+      color: white;
     }
   }
 
-  &__small {
+  .main-right {
+    padding: 2rem;
+  }
+
+  .card-big {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .card {
+    background-color: whitesmoke;
+
+    &__h2 {
+      margin: 0.5rem 0;
+    }
+
+    &__h6 {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    &__paragraph {
+      font-size: 0.8rem;
+    }
 
     &__wrapper {
-      padding: 3rem;
-      background-color: rgb(24, 24, 21);
-      border-bottom: 1px solid rgb(75, 71, 71);
-      flex-grow: 1;
-      transition: transform 250ms;
-      transition-timing-function: linear;
+      margin-bottom: 1rem;
+      background: rgb(37, 36, 37);
+      padding: 2rem;
+      @include hoverAnimation();
+    }
+
+    &__small {
+      background: rgb(37, 36, 37);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      padding: 2rem;
+    }
+  }
+}
+
+/*PC Layout */
+@media (min-width: 922px) {
+  .main-left {
+    width: 50%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    // padding: 8rem;
+    padding: 5rem;
+
+    &__content {
+      height: inherit;
+      flex-direction: column;
+      justify-content: space-between;
+      display: flex;
+    }
+  }
+
+  .profile {
+    &__name {
+      font-size: 5rem;
+      font-weight: 700;
+    }
+
+    &__description {
+      font-size: 0.9em;
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 0;
+    }
+
+    &__bio {
+      display: flex;
+      align-items: center;
+    }
+
+    &__bio-img {
+      width: 6%;
+      border-radius: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
 
       &:hover {
-        background-color: rgb(30, 30, 32);
-        transform: scale(1.1);
+        cursor: pointer;
       }
+    }
+
+    &__bio-social {
+      letter-spacing: 1;
+      font-weight: 400;
+      font-size: 0.87rem;
+      padding: 0 1rem;
+      color: white;
+    }
+  }
+
+  .main-right {
+    margin-left: 50%;
+    height: auto;
+    padding: 5rem;
+  }
+
+  .card {
+    &__wrapper {
+      margin-bottom: 1rem;
+      background: rgb(109, 104, 109);
+      padding: 2rem;
+    }
+
+    &__h2 {
+      margin: 0.5rem 0;
+    }
+
+    &__h6 {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    &__paragraph {
+      font-size: 0.8rem;
+    }
+
+    &__small {
+      background: rgb(37, 36, 37);
+      margin-bottom: 2rem;
+      flex-grow: 1;
+      padding: 2rem;
+      @include hoverAnimation();
 
       &:not(:last-child) {
         margin-right: 1rem;
-        margin-bottom: 1rem;
       }
     }
+  }
+
+  .card-small {
+    display: flex;
+    justify-content: space-between;
   }
 }
