@@ -37,7 +37,7 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
-  color: #cec6c6;
+  // color: #cec6c6;
   display: inline-block;
 }
 
@@ -50,7 +50,7 @@ a:active {
   }
 
   .main-left {
-    padding: 3rem;
+    padding: 2rem;
     width: 100%;
   }
 
@@ -61,7 +61,7 @@ a:active {
 
     &__name {
       font-size: 3rem;
-      font-weight: 500;
+      font-weight: 700;
     }
 
     &__description {
@@ -89,16 +89,23 @@ a:active {
     &__bio-img {
       width: 10%;
       border-radius: 400px;
-      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
+      position: relative;
+
+      &:hover{
+        cursor: pointer;
+        transform: scale(2.3); 
+
+      }
     }
 
     &__bio-social {
-      // font-weight: bold;
       letter-spacing: 1;
       font-weight: 400;
-      font-size: .87rem;
+      font-size: 0.87rem;
       padding: 0 1rem;
+      color: white;
 
       // align-items: s;
       // height: 100%;
@@ -106,14 +113,13 @@ a:active {
   }
 
   .main-right {
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .card-big {
     display: flex;
     flex-direction: column;
   }
-
 
   .card {
     background-color: whitesmoke;
@@ -123,25 +129,33 @@ a:active {
       padding: 2rem;
     }
 
-    &__small{
-      background-color: blue;
+    &__small {
+      background: rgb(23, 18, 27);
       display: flex;
       flex-direction: column;
       margin-bottom: 2rem;
 
-      &__body{
+      &__body {
         padding: 2rem;
       }
     }
 
-    &__h6{
+    &__h2{
+     margin: .5rem 0;
+    }
+
+    &__h6 {
       text-transform: uppercase;
+      font-size: .7rem;
+    }
+
+    &__paragraph{
+      font-size: .8rem;
     }
   }
 }
 
 /*PC Layout */
-
 @media (min-width: 922px) {
   .container {
     height: 100%;
