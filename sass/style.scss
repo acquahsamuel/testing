@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
+
+// Color-family
+$font-family-gothic: "Gothic A1", sans-serif;
+$font-family-jose-san: "Josefin Sans", sans-serif;
+
+// Coolor-pallete
+$color-primary-light-200: rgba(0, 0, 0, 0.945);
+$color-primary-light-300: rgb(5, 4, 4);
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-family: $font-family-gothic;
+  background-color: $color-primary-light-300;
+  color: whitesmoke;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #cec6c6;
+  display: inline-block;
+}
+
+/* Mobile Screen layout*/
+@media (max-width: 922px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-left {
+    padding: 3rem;
+    width: 100%;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0;
+
+    &__name {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+
+    &__description {
+      font-size: 0.8em;
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+
+    &__title {
+      // display: flex;
+      // flex-direction: column;
+      // margin: 3rem 0;
+      // font-family: inherit;
+      // font-weight: 500;
+      // font-size: 0.8rem;
+      // line-height: 1.9;
+      display: none;
+    }
+
+    &__bio {
+      display: flex;
+      align-items: center;
+    }
+
+    &__bio-img {
+      width: 10%;
+      border-radius: 400px;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+    }
+
+    &__bio-social {
+      // font-weight: bold;
+      letter-spacing: 1;
+      font-weight: 400;
+      font-size: .87rem;
+      padding: 0 1rem;
+
+      // align-items: s;
+      // height: 100%;
+    }
+  }
+
+  .main-right {
+    padding: 3rem;
+  }
+
+  .card-big {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .card {
+    background-color: whitesmoke;
+    &__wrapper {
+      margin-bottom: 1rem;
+      background: rgb(23, 18, 27);
+      padding: 2rem;
+    }
+
+    &__small{
+      background-color: blue;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+
+      &__body{
+        padding: 2rem;
+      }
+    }
+
+    &__h6{
+      text-transform: uppercase;
+    }
+  }
+}
+
+/*PC Layout */
+
+@media (min-width: 922px) {
+  .container {
+    height: 100%;
+  }
+
+  .main-left {
+    width: 50%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    background-color: brown;
+
+    &__content {
+      height: inherit;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .main-right {
+    margin-left: 50%;
+    height: auto;
+    background-color: rgb(180, 148, 148);
+  }
+
+  .profile {
+    &__name {
+    }
+
+    &__bio-img {
+      width: 10%;
+      border-radius: 400px;
+    }
+  }
+}
