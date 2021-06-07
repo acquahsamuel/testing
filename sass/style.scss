@@ -29,7 +29,7 @@ $color-primary-light-600: #2f2fa2;
     transition-timing-function: linear;
 
     &:hover {
-        background-color: $color-primary-light-600;
+        background-color: $color-primary-light-400;
         transform: scale(1.1);
     }
 }
@@ -182,7 +182,6 @@ a:active {
     .profile {
         display: flex;
         flex-direction: column;
-        
 
         &__name {
             font-size: 3rem;
@@ -190,7 +189,7 @@ a:active {
             margin: 1rem 0;
         }
 
-        &__description{
+        &__description {
             font-family: inherit;
             line-height: 1.5;
             font-size: .9rem;
@@ -232,7 +231,6 @@ a:active {
         margin-left: 50%;
         padding: 5rem;
         background-color: rgb(12, 28, 100);
-        
     }
 
     .card {
@@ -252,6 +250,7 @@ a:active {
         &__title {
             font-size: 1rem;
             margin: 0.5rem 0;
+            font-weight: 300;
             text-transform: uppercase;
         }
 
@@ -260,19 +259,24 @@ a:active {
             color: $color-primary-light-400;
         }
 
-        &__rating{
+        &__rating {
             padding: .5rem 0;
         }
 
+        &__description {
+            font-family: inherit;
+            font-weight: 500;
+            font-size: .9rem;
+        }
+
         &__list {
-            // text-decoration: none;
             list-style: none;
             font-size: .8rem;
             padding: 0.2rem 0;
         }
 
         &__body {
-            background: $color-primary-light-400;
+            background: $color-primary-light-200;
             margin-bottom: 2rem;
             display: flex;
             flex-direction: column;
